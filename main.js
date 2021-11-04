@@ -1,6 +1,6 @@
 const FORM = document.getElementById("form");
 const INPUT = document.getElementById("input");
-const LIST = JSON.parse(localStorage.getItem("DAG-list")) || [];
+let LIST = JSON.parse(localStorage.getItem("DAG-list")) || [];
 
 // Add event listeners
 FORM.addEventListener("submit", (e) => {
@@ -17,4 +17,9 @@ const create = (input) => {
   LIST.unshift(item);
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
   console.log(LIST);
+};
+
+const deleteAll = () => {
+  LIST = [];
+  localStorage.setItem("DAG-list", JSON.stringify(LIST));
 };
