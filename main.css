@@ -1,0 +1,8 @@
+#display {
+  border: 5px dashed black;
+  width: 50%;
+  height: 80%;
+  position: absolute;
+  right: 15%;
+  top: 5%;
+}
