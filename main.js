@@ -26,9 +26,11 @@ const display = () => {
   const box = document.getElementById("display");
   box.innerHTML = "";
   LIST.forEach((item) => {
-    box.innerHTML += `<span style="border-color:${item.color};color:${item.color}">${item.text}</span>`;
+    box.innerHTML += `<span class="fade-in-left" style="border-color:${item.color};color:${item.color}">${item.text}</span>`;
   });
 };
+
+// const move = () => {};
 
 // Button functions
 const deleteAll = () => {

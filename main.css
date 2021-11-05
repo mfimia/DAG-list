@@ -42,10 +42,14 @@ svg {
   filter: invert(1), hue-rotate(180deg);
 }
 
-#fake-container {
+.fade-in-left {
+    
+}
+
+/* #fake-container {
   visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
   border: 1px white solid;
-}
+} */
