@@ -60,12 +60,22 @@ const randomLight = () => {
 };
 
 const setAttributes = (container, id, index, color, event) => {
-  if ((index === LIST.length - 1) && !event) {
+  if (index === LIST.length - 1 && !event) {
     container.setAttribute("class", "fade-in-left");
   }
   container.setAttribute("id", `${id}`);
   const style = `border-color:${color};color:${color}; height:${container.clientWidth}px; visibility:visible`;
   container.setAttribute("style", style);
+  container.addEventListener("mousedown", (event) => {
+    displayMenu(event.target);
+  });
 };
 
-// display();
+const displayMenu = (item) => {
+  const menu = document.createElement("div");
+  console.log(item.style)
+  menu.style.height = item.clientHeight;
+//   console.log(menu.style.height);
+  item.appendChild(menu);
+//   console.log(menu.style.height);
+};

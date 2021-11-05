@@ -5,7 +5,7 @@ document.getElementById("logo").setAttribute("d", `${logoPath}`);
 let logo = document.querySelector("#logo");
 let color = 0;
 let direction = 0;
-function updateH1Position() {
+const updateH1Position = () => {
   requestAnimationFrame(updateH1Position);
   if (color > 0) {
     direction = 0.3;
@@ -16,5 +16,5 @@ function updateH1Position() {
   color = color + direction;
   logo.style.stroke = `hsl(${color}, 60%, 50%)`;
   logo.style.fill = `hsl(${color}, 60%, 50%)`;
-}
+};
 requestAnimationFrame(updateH1Position);
