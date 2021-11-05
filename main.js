@@ -28,14 +28,14 @@ const create = (input) => {
 };
 
 // Function to display items on container
-const display = () => {
+const display = (event) => {
   const box = document.getElementById("display");
   box.innerHTML = "";
   LIST.forEach((item, i) => {
     const span = document.createElement("span");
     span.innerHTML = `${item.text}`;
     box.appendChild(span);
-    setAttributes(span, item.id, i, item.color);
+    setAttributes(span, item.id, i, item.color, event);
   });
 };
 
@@ -59,13 +59,13 @@ const randomLight = () => {
   return color;
 };
 
-const setAttributes = (container, id, index, color) => {
-    if (index === LIST.length - 1) {
-      container.setAttribute("class", "fade-in-left");
-    }
-    container.setAttribute("id", `${id}`);
-    const style = `border-color:${color};color:${color}; height:${container.clientWidth}px; visibility:visible`;
-    container.setAttribute("style", style);
-  };
+const setAttributes = (container, id, index, color, event) => {
+  if ((index === LIST.length - 1) && !event) {
+    container.setAttribute("class", "fade-in-left");
+  }
+  container.setAttribute("id", `${id}`);
+  const style = `border-color:${color};color:${color}; height:${container.clientWidth}px; visibility:visible`;
+  container.setAttribute("style", style);
+};
 
-display();
+// display();
