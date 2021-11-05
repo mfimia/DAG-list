@@ -72,11 +72,27 @@ const setAttributes = (container, id, index, color, event) => {
 };
 
 const displayMenu = (item) => {
-  console.log(item.id);
+  const optionSize = 60;
   const menu = document.createElement("div");
-  menu.setAttribute('class', 'options-menu')
-  menu.style.width = `${item.clientWidth}px`;
-  menu.style.height = `${item.clientHeight}px`;
-  console.log(menu.style);
+  addOptionsMenu(menu);
+  menu.setAttribute("class", "options-menu");
+  menu.style.width = `${item.clientWidth + optionSize}px`;
+  menu.style.height = `${item.clientHeight + optionSize}px`;
   item.appendChild(menu);
+};
+
+const addOptionsMenu = (item) => {
+  const addOption = document.createElement("div");
+  addOption.setAttribute("class", "add-option");
+  const removeOption = document.createElement("div");
+  removeOption.setAttribute("class", "remove-option");
+  const editOption = document.createElement("div");
+  editOption.setAttribute("class", "edit-option");
+  const closeOption = document.createElement("div");
+  closeOption.setAttribute("class", "close-option");
+  item.appendChild(addOption);
+  item.appendChild(removeOption);
+  item.appendChild(editOption);
+  item.appendChild(closeOption);
+  return item;
 };
