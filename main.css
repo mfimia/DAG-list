@@ -72,3 +72,9 @@ svg {
   width: 100px;
   height: 50px;
 }
+
+.options-menu {
+  position: absolute;
+  border: 1px solid white;
+  z-index: -1;
+}

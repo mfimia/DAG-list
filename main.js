@@ -72,10 +72,11 @@ const setAttributes = (container, id, index, color, event) => {
 };
 
 const displayMenu = (item) => {
+  console.log(item.id);
   const menu = document.createElement("div");
-  console.log(item.style)
-  menu.style.height = item.clientHeight;
-//   console.log(menu.style.height);
+  menu.setAttribute('class', 'options-menu')
+  menu.style.width = `${item.clientWidth}px`;
+  menu.style.height = `${item.clientHeight}px`;
+  console.log(menu.style);
   item.appendChild(menu);
-//   console.log(menu.style.height);
 };
