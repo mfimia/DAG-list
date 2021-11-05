@@ -64,6 +64,14 @@ svg {
   }
 }
 
+#svg-logo {
+  position: absolute;
+  bottom: 3%;
+  left: 2%;
+  width: 100px;
+  height: 50px;
+}
+
 /* #fake-container {
   visibility: hidden;
   position: absolute;
