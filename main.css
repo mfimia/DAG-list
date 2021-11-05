@@ -12,7 +12,10 @@
   position: absolute;
   right: 15%;
   top: 5%;
-  padding: 3%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
 }
 
 /* Dark mode enabled */
@@ -26,7 +29,7 @@ html {
 span {
   padding: 10px;
   border: 1px solid;
-  margin: 30px;
+  margin: 30px 12%;
   visibility: hidden;
   display: inline-flex;
   justify-content: center;

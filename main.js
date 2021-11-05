@@ -21,7 +21,7 @@ const create = (input) => {
     id: Math.floor(Math.random() * 100000),
     color: randomLight(),
   };
-  LIST.push(item);
+  LIST.unshift(item);
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
   const box = document.getElementById("display");
   display();
@@ -60,7 +60,7 @@ const randomLight = () => {
 };
 
 const setAttributes = (container, id, index, color, event) => {
-  if (index === LIST.length - 1 && !event) {
+  if (index === 0 && !event) {
     container.setAttribute("class", "fade-in-left");
   }
   container.setAttribute("id", `${id}`);
