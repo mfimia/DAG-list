@@ -16,6 +16,7 @@
   flex-wrap: wrap;
   align-items: flex-end;
   justify-content: center;
+  overflow-y: auto;
 }
 
 /* Dark mode enabled */
@@ -81,11 +82,18 @@ svg {
   height: 50px;
 }
 
-.options-menu {
+[class*="options-menu"] {
   position: absolute;
   cursor: text;
-  /* border: 1px solid white; */
   z-index: -1;
+}
+
+.options-menu-large .remove-option,
+.options-menu-large .edit-option,
+.options-menu-large .close-option,
+.options-menu-large .add-option {
+  height: 50px;
+  width: 50px;
 }
 
 .add-option,

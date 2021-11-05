@@ -23,7 +23,7 @@ const create = (input) => {
   };
   LIST.unshift(item);
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
-  const box = document.getElementById("display");
+  //   const box = document.getElementById("display");
   display();
 };
 
@@ -74,17 +74,19 @@ const setAttributes = (container, id, index, color, event) => {
   const style = `border-color:${color};color:${color}; height:${container.clientWidth}px; visibility:visible`;
   container.setAttribute("style", style);
   container.addEventListener("mousedown", (event) => {
-    console.log(event.target.id);
     event.target.id ? displayMenu(event.target) : false;
   });
 };
 
 // Function that takes an item and displays its menu
 const displayMenu = (item) => {
-  const optionSize = 60;
+  console.log(item.clientWidth);
+  let optionSize = item.clientWidth > 100 ? 80 : 60;
   const menu = document.createElement("div");
   addOptionsMenu(menu);
-  menu.setAttribute("class", "options-menu");
+  item.clientWidth > 100
+    ? menu.setAttribute("class", "options-menu-large")
+    : menu.setAttribute("class", "options-menu");
   menu.style.width = `${item.clientWidth + optionSize}px`;
   menu.style.height = `${item.clientHeight + optionSize}px`;
   item.appendChild(menu);
