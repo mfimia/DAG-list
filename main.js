@@ -5,7 +5,11 @@ let LIST = JSON.parse(localStorage.getItem("DAG-list")) || [];
 // Add event listeners
 FORM.addEventListener("submit", (e) => {
   e.preventDefault();
-  INPUT.value ? create(INPUT.value) : alert("Please write something!");
+  if (INPUT.value.length < 56) {
+    INPUT.value ? create(INPUT.value) : alert("Please write something!");
+  } else {
+    alert("Please write something shorter! (Max. 55 characters)");
+  }
 });
 
 // Main CRUD functions
@@ -23,22 +27,37 @@ const create = (input) => {
 };
 
 const display = () => {
-//   console.log(LIST);
+  //   console.log(LIST);
   const box = document.getElementById("display");
   box.innerHTML = "";
   LIST.forEach((item, i) => {
     if (i === LIST.length - 1) {
-    //   const span = document.createElement("span");
-    //   span.setAttribute('id', `${item.id}`);
-    //   span.setAttribute('class', 'fade-in-left');
-    //   span.innerHTML = `${item.text}`
-      box.innerHTML += `<span id=${item.id} class="fade-in-left" style="border-color:${item.color};color:${item.color}">${item.text}</span>`;
+      const span = document.createElement("span");
+      span.innerHTML = `${item.text}`;
+      box.appendChild(span);
+      setAttributes(span, item.id, i, item.color);
+
+      //   span.setAttribute('id', `${item.id}`);
+      //   span.setAttribute('class', 'fade-in-left');
+      //
+      //   box.innerHTML += `<span id=${item.id} class="fade-in-left" style="border-color:${item.color};color:${item.color}">${item.text}</span>`;
     } else {
-      box.innerHTML += `<span id=${item.id} style="border-color:${item.color}; color:${item.color}">${item.text}</span>`;
+      //   box.innerHTML += `<span id=${item.id} style="border-color:${item.color}; color:${item.color}">${item.text}</span>`;
     }
     // const width = document.getElementById(`${item.id}`).clientWidth;
     // document.getElementById(`${item.id}`);
   });
+};
+
+const setAttributes = (container, id, index, color) => {
+  if (index === LIST.length - 1) {
+    container.setAttribute("class", "fade-in-left");
+  }
+  container.setAttribute("id", `${id}`);
+  const style = `border-color:${color};color:${color}; height:${container.clientWidth}px; visibility:visible`;
+  container.setAttribute("style", style);
+  console.log(container, id, index);
+  console.log(container.clientWidth);
 };
 
 // Button functions
@@ -59,9 +78,5 @@ const randomLight = () => {
   )}, ${randomValue1}%, ${randomValue2}%)`;
   return color;
 };
-
-// const setAttributes = (id, ) => {
-
-// }
 
 display();

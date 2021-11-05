@@ -27,10 +27,17 @@ html {
 }
 
 span {
-  padding: 10px;
-  border: 1px solid white;
-  display: inline-block;
+    padding: 10px;
+  border: 1px solid;
   margin: 0 4px;
+  visibility: hidden;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 120px;
+  text-align: center;
+  /* flex-wrap: wrap; */
+  word-wrap: break-word;
   /* transition: all 1s ease; */
   /* opacity: 0; */
   cursor: pointer;
