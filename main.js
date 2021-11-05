@@ -59,6 +59,7 @@ const randomLight = () => {
   return color;
 };
 
+// Function to set all atrributes
 const setAttributes = (container, id, index, color, event) => {
   // Logic to add padding/animation when item is first/not small
   if (index === 0 && !event && container.innerHTML.length > 5) {
@@ -78,6 +79,7 @@ const setAttributes = (container, id, index, color, event) => {
   });
 };
 
+// Function that takes an item and displays its menu
 const displayMenu = (item) => {
   const optionSize = 60;
   const menu = document.createElement("div");
@@ -88,6 +90,7 @@ const displayMenu = (item) => {
   item.appendChild(menu);
 };
 
+// Creates all menu options and returns item
 const addOptionsMenu = (item) => {
   const addOption = document.createElement("div");
   addOption.setAttribute("class", "add-option");
