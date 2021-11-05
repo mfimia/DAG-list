@@ -41,7 +41,11 @@ const deleteAll = () => {
 
 // Helper functions
 const randomLight = () => {
-  let color = "hsl(" + Math.floor(Math.random() * 360) + ", 100%, 75%)";
+  const randomValue1 = Math.floor(Math.random() * 51 + 50);
+  const randomValue2 = Math.floor(Math.random() * 31 + 50);
+  const color = `hsl(${Math.floor(
+    Math.random() * 361
+  )}, ${randomValue1}%, ${randomValue2}%)`;
   return color;
 };
 
