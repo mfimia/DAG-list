@@ -60,9 +60,15 @@ const randomLight = () => {
 };
 
 const setAttributes = (container, id, index, color, event) => {
-  if (index === 0 && !event) {
+  // Logic to add padding/animation when item is first/not small
+  if (index === 0 && !event && container.innerHTML.length > 5) {
+    container.setAttribute("class", "fade-in-left padding");
+  } else if (index === 0 && !event && container.innerHTML.length < 5) {
     container.setAttribute("class", "fade-in-left");
+  } else if (container.innerHTML.length > 5) {
+    container.setAttribute("class", "padding");
   }
+
   container.setAttribute("id", `${id}`);
   const style = `border-color:${color};color:${color}; height:${container.clientWidth}px; visibility:visible`;
   container.setAttribute("style", style);
