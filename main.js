@@ -18,6 +18,11 @@ const create = (input) => {
   };
   LIST.push(item);
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
+  const box = document.getElementById("display");
+  //   box.innerHTML += `<span class="fade-in-left" style="border-color:${item.color};color:${item.color}">${item.text}</span>`;
+  //   const timeOut = () => {
+  //       setTimeout(display(), 1000);
+  //   }
   display();
 };
 
@@ -25,8 +30,12 @@ const display = () => {
   console.log(LIST);
   const box = document.getElementById("display");
   box.innerHTML = "";
-  LIST.forEach((item) => {
-    box.innerHTML += `<span style="border-color:${item.color};color:${item.color}">${item.text}</span>`;
+  LIST.forEach((item, i) => {
+    if (i === LIST.length - 1) {
+      box.innerHTML += `<span class="fade-in-left" style="border-color:${item.color};color:${item.color}">${item.text}</span>`;
+    } else {
+      box.innerHTML += `<span style="border-color:${item.color};color:${item.color}">${item.text}</span>`;
+    }
   });
 };
 
