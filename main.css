@@ -5,13 +5,51 @@
   box-sizing: border-box;
 }
 
+#form {
+  margin: 3%;
+}
+
+#input {
+  line-height: 1.8;
+  font-size: 2vmin;
+  text-indent: 8px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  border: thick dashed white;
+  background-color: black;
+  color: white;
+}
+
+#submit {
+  background-color: black;
+  width: 5vmin;
+  height: 5vmin;
+  border-radius: 50%;
+  border: green thick dashed;
+  margin-left: 1.4vmin;
+  cursor: pointer;
+}
+
+#input:focus {
+  outline: none;
+}
+
+#clean {
+  color: red;
+  font-weight: 900;
+  font-size: 1.8vmin;
+  background-color: black;
+  border: medium dashed red;
+  cursor: pointer;
+}
+
 #display {
-  border: 5px dashed white;
+  border: thick dashed white;
   width: 50%;
   height: 80%;
   position: absolute;
   right: 15%;
-  top: 5%;
+  top: 7%;
   display: flex;
   flex-wrap: wrap;
   align-items: flex-end;
@@ -29,7 +67,7 @@ html {
 
 span {
   padding: 10px;
-  border: 1px solid;
+  border: medium solid;
   margin: 30px 12%;
   visibility: hidden;
   display: inline-flex;
@@ -37,10 +75,12 @@ span {
   align-items: center;
   max-width: 144px;
   text-align: center;
-  word-wrap: break-word;
+  overflow-wrap: break-word;
   cursor: pointer;
   border-radius: 50%;
   z-index: 2;
+  font-family: "Roboto Slab", sans-serif;
+  font-weight: 900;
 }
 
 .padding {
