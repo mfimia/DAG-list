@@ -64,7 +64,7 @@ const setAttributes = (container, id, index, color, event) => {
   // Logic to add padding/animation when item is first/not small
   if (index === 0 && !event && container.innerHTML.length > 5) {
     container.setAttribute("class", "fade-in-left padding");
-  } else if (index === 0 && !event && container.innerHTML.length < 5) {
+  } else if (index === 0 && !event && container.innerHTML.length <= 5) {
     container.setAttribute("class", "fade-in-left");
   } else if (container.innerHTML.length > 5) {
     container.setAttribute("class", "padding");
