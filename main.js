@@ -16,7 +16,7 @@ const create = (input) => {
     id: Math.floor(Math.random() * 100000),
     color: randomLight(),
   };
-  LIST.unshift(item);
+  LIST.push(item);
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
   display();
 };
@@ -26,11 +26,9 @@ const display = () => {
   const box = document.getElementById("display");
   box.innerHTML = "";
   LIST.forEach((item) => {
-    box.innerHTML += `<span class="fade-in-left" style="border-color:${item.color};color:${item.color}">${item.text}</span>`;
+    box.innerHTML += `<span style="border-color:${item.color};color:${item.color}">${item.text}</span>`;
   });
 };
-
-// const move = () => {};
 
 // Button functions
 const deleteAll = () => {

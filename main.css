@@ -30,8 +30,8 @@ span {
   padding: 10px;
   border: 1px solid white;
   display: inline-block;
-  transition: all 1s ease;
-  /* visibility: hidden; */
+  /* transition: all 1s ease; */
+  /* opacity: 0; */
 }
 
 img,
@@ -43,7 +43,24 @@ svg {
 }
 
 .fade-in-left {
-    
+  animation: fade-in-left 1s ease;
+}
+
+@keyframes fade-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-8000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(30px);
+  }
+  80% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* #fake-container {
