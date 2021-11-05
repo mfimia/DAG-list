@@ -1,3 +1,6 @@
+/* font-family: "Roboto Slab", serif; (TITLES) */
+/* font-family: "Roboto", sans-serif; (BODY) */
+
 #display {
   border: 5px dashed white;
   width: 50%;
@@ -10,6 +13,7 @@
 html {
   background-color: #000;
   filter: invert(1), hue-rotate(180deg);
+  font-family: "Roboto", sans-serif;
 }
 
 img,
