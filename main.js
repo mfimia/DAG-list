@@ -67,7 +67,8 @@ const setAttributes = (container, id, index, color, event) => {
   const style = `border-color:${color};color:${color}; height:${container.clientWidth}px; visibility:visible`;
   container.setAttribute("style", style);
   container.addEventListener("mousedown", (event) => {
-    displayMenu(event.target);
+    console.log(event.target.id);
+    event.target.id ? displayMenu(event.target) : false;
   });
 };
 
