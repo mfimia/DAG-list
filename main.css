@@ -1,8 +1,21 @@
 #display {
-  border: 5px dashed black;
+  border: 5px dashed white;
   width: 50%;
   height: 80%;
   position: absolute;
   right: 15%;
   top: 5%;
+}
+
+html {
+  background-color: #000;
+  filter: invert(1), hue-rotate(180deg);
+}
+
+img,
+video,
+iframe,
+canvas,
+svg {
+  filter: invert(1), hue-rotate(180deg);
 }
