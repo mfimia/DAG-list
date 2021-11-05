@@ -8,6 +8,7 @@ FORM.addEventListener("submit", (e) => {
   INPUT.value ? create(INPUT.value) : alert("Please write something!");
 });
 
+// Main CRUD functions
 const create = (input) => {
   INPUT.value = "";
   const item = {
@@ -16,10 +17,20 @@ const create = (input) => {
   };
   LIST.unshift(item);
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
-  console.log(LIST);
+  display();
 };
 
+const display = () => {
+  const box = document.getElementById("display");
+  box.innerHTML = "";
+  LIST.forEach((item) => {
+    box.innerHTML += `<span>${item.text}</span>`;
+  });
+};
+
+// Button functions
 const deleteAll = () => {
   LIST = [];
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
+  display();
 };

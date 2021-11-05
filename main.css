@@ -1,6 +1,10 @@
 /* font-family: "Roboto Slab", serif; (TITLES) */
 /* font-family: "Roboto", sans-serif; (BODY) */
 
+* {
+    box-sizing: border-box;
+}
+
 #display {
   border: 5px dashed white;
   width: 50%;
@@ -8,12 +12,23 @@
   position: absolute;
   right: 15%;
   top: 5%;
+  /* word-wrap: break-word; */
+  padding: 3%;
+  /* display: block; */
 }
 
+/* Dark mode enabled */
 html {
   background-color: #000;
   filter: invert(1), hue-rotate(180deg);
   font-family: "Roboto", sans-serif;
+  color: white;
+}
+
+span {
+  padding: 10px;
+  border: 1px solid white;
+  display: inline-block;
 }
 
 img,
