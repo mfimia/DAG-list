@@ -1,7 +1,3 @@
-const FORM = document.getElementById("form");
-const INPUT = document.getElementById("input");
-let LIST = JSON.parse(localStorage.getItem("DAG-list")) || [];
-
 // Add event listeners
 FORM.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -20,23 +16,11 @@ const create = (input) => {
     text: input,
     id: Math.floor(Math.random() * 100000),
     color: randomLight(),
+    menu: false,
   };
   LIST.unshift(item);
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
-  //   const box = document.getElementById("display");
   display();
-};
-
-// Function to display items on container
-const display = (event) => {
-  const box = document.getElementById("display");
-  box.innerHTML = "";
-  LIST.forEach((item, i) => {
-    const span = document.createElement("span");
-    span.innerHTML = `${item.text}`;
-    box.appendChild(span);
-    setAttributes(span, item.id, i, item.color, event);
-  });
 };
 
 // Button functions
@@ -47,64 +31,4 @@ const deleteAll = () => {
   INPUT.value = "";
   display();
   console.clear();
-};
-
-// Helper functions
-const randomLight = () => {
-  const randomValue1 = Math.floor(Math.random() * 51 + 50);
-  const randomValue2 = Math.floor(Math.random() * 31 + 50);
-  const color = `hsl(${Math.floor(
-    Math.random() * 361
-  )}, ${randomValue1}%, ${randomValue2}%)`;
-  return color;
-};
-
-// Function to set all atrributes
-const setAttributes = (container, id, index, color, event) => {
-  // Logic to add padding/animation when item is first/not small
-  if (index === 0 && !event && container.innerHTML.length > 5) {
-    container.setAttribute("class", "fade-in-left padding");
-  } else if (index === 0 && !event && container.innerHTML.length <= 5) {
-    container.setAttribute("class", "fade-in-left");
-  } else if (container.innerHTML.length > 5) {
-    container.setAttribute("class", "padding");
-  }
-
-  container.setAttribute("id", `${id}`);
-  const style = `border-color:${color};color:${color}; height:${container.clientWidth}px; visibility:visible`;
-  container.setAttribute("style", style);
-  container.addEventListener("mousedown", (event) => {
-    event.target.id ? displayMenu(event.target) : false;
-  });
-};
-
-// Function that takes an item and displays its menu
-const displayMenu = (item) => {
-  console.log(item.clientWidth);
-  let optionSize = item.clientWidth > 100 ? 80 : 60;
-  const menu = document.createElement("div");
-  addOptionsMenu(menu);
-  item.clientWidth > 100
-    ? menu.setAttribute("class", "options-menu-large")
-    : menu.setAttribute("class", "options-menu");
-  menu.style.width = `${item.clientWidth + optionSize}px`;
-  menu.style.height = `${item.clientHeight + optionSize}px`;
-  item.appendChild(menu);
-};
-
-// Creates all menu options and returns item
-const addOptionsMenu = (item) => {
-  const addOption = document.createElement("div");
-  addOption.setAttribute("class", "add-option");
-  const removeOption = document.createElement("div");
-  removeOption.setAttribute("class", "remove-option");
-  const editOption = document.createElement("div");
-  editOption.setAttribute("class", "edit-option");
-  const closeOption = document.createElement("div");
-  closeOption.setAttribute("class", "close-option");
-  item.appendChild(addOption);
-  item.appendChild(removeOption);
-  item.appendChild(editOption);
-  item.appendChild(closeOption);
-  return item;
 };
