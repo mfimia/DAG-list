@@ -30,6 +30,10 @@
   cursor: pointer;
 }
 
+/* #submit:hover {
+    background-color: green;
+} */
+
 #input:focus {
   outline: none;
 }
