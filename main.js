@@ -73,21 +73,34 @@ const setAttributes = (container, id, index, color, loaded) => {
   const style = `border-color:${color};color:${color}; height:${container.clientWidth}px; visibility:visible`;
   container.setAttribute("style", style);
   container.addEventListener("mousedown", (event) => {
-    event.target.id ? displayMenu(event.target) : false;
+    event.target.id ? displayMenu(event.target, event.target.id) : false;
   });
 };
 
 // Function that takes an item and displays its menu
-const displayMenu = (item) => {
-  let optionSize = item.clientWidth > 100 ? 80 : 60;
-  const menu = document.createElement("div");
-  addOptionsMenu(menu);
-  item.clientWidth > 100
-    ? menu.setAttribute("class", "options-menu-large")
-    : menu.setAttribute("class", "options-menu");
-  menu.style.width = `${item.clientWidth + optionSize}px`;
-  menu.style.height = `${item.clientHeight + optionSize}px`;
-  item.appendChild(menu);
+const displayMenu = (item, id) => {
+  const dagItem = LIST.filter((element) => element.id == id);
+  if (!dagItem[0].menu) {
+    let optionSize = item.clientWidth > 100 ? 80 : 60;
+    const menu = document.createElement("div");
+    addOptionsMenu(menu);
+    item.clientWidth > 100
+      ? menu.setAttribute("class", "options-menu-large")
+      : menu.setAttribute("class", "options-menu");
+    menu.style.width = `${item.clientWidth + optionSize}px`;
+    menu.style.height = `${item.clientHeight + optionSize}px`;
+    item.appendChild(menu);
+  }
+  displayedMenuActive(id);
+};
+
+const displayedMenuActive = (id) => {
+  LIST.forEach((item) => {
+    if (item.id == id) {
+      console.log(item.menu);
+      item.menu = true;
+    }
+  });
 };
 
 // Creates all menu options and returns item
