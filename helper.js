@@ -8,35 +8,6 @@ const randomLight = () => {
   return color;
 };
 
-// Creates all menu options and returns item
-const addOptionsMenu = (item) => {
-  const addOption = document.createElement("div");
-  addOption.setAttribute("class", "add-option");
-  addOption.addEventListener("click", () => {
-    addItemFromMenu();
-  });
-  const removeOption = document.createElement("div");
-  removeOption.setAttribute("class", "remove-option");
-  removeOption.addEventListener("click", () => {
-    removeItemFromMenu();
-  });
-  const editOption = document.createElement("div");
-  editOption.setAttribute("class", "edit-option");
-  editOption.addEventListener("click", () => {
-    editItemFromMenu();
-  });
-  const closeOption = document.createElement("div");
-  closeOption.setAttribute("class", "close-option");
-  closeOption.addEventListener("click", () => {
-    closeItemFromMenu();
-  });
-  item.appendChild(addOption);
-  item.appendChild(removeOption);
-  item.appendChild(editOption);
-  item.appendChild(closeOption);
-  return item;
-};
-
 // Function to set all atrributes
 const setAttributes = (container, id, index, color, loaded) => {
   // Logic to add padding/animation when item is first/not small
@@ -59,7 +30,6 @@ const setAttributes = (container, id, index, color, loaded) => {
 const displayedMenuActive = (id) => {
   LIST.forEach((item) => {
     if (item.id == id) {
-      console.log(item.menu);
       item.menu = true;
     }
   });
