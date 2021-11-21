@@ -75,7 +75,7 @@ html {
 span {
   padding: 10px;
   border: medium solid;
-  margin: 40px 12%;
+  margin: 50px 12%;
   visibility: hidden;
   display: inline-flex;
   justify-content: center;
@@ -129,61 +129,3 @@ svg {
   height: 50px;
 }
 
-[class*="options-menu"] {
-  position: absolute;
-  cursor: text;
-  z-index: -1;
-}
-
-.options-menu-large .remove-option,
-.options-menu-large .edit-option,
-.options-menu-large .close-option,
-.options-menu-large .add-option {
-  height: 50px;
-  width: 50px;
-  font-size: x-large;
-  padding: 8px;
-}
-
-.add-option,
-.remove-option,
-.edit-option,
-.close-option {
-  /* border: 1px solid white; */
-  height: 36px;
-  width: 36px;
-  border-radius: 50%;
-  position: absolute;
-  cursor: pointer;
-  z-index: 3;
-  text-align: center;
-  font-size: large;
-  padding: 6px;
-  font-weight: 100;
-}
-
-.add-option:hover,
-.remove-option:hover,
-.edit-option:hover,
-.close-option:hover {
-  font-weight: 700;
-}
-
-.add-option {
-  left: 50%;
-  transform: translate(-50%);
-}
-.remove-option {
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.edit-option {
-  top: 50%;
-  transform: translateY(-50%);
-}
-.close-option {
-  left: 50%;
-  transform: translate(-50%);
-  bottom: 0;
-}
