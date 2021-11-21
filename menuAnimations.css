@@ -58,62 +58,87 @@
 }
 
 .popout-add {
-  animation: popout-add 0.4s ease;
+  animation: popout-add 0.5s ease;
+  visibility: hidden;
+  animation-fill-mode: forwards;
 }
 
 @keyframes popout-add {
   from {
+    visibility: visible;
     transform: scale(0) translate(-50%);
   }
   80% {
+    visibility: visible;
     transform: scale(1.2) translate(-50%);
   }
   to {
+    visibility: visible;
     transform: scale(1) translate(-50%);
   }
 }
-.popout-add {
-  animation: popout-add 0.4s ease;
+.popout-remove {
+  animation: popout-remove 0.5s ease;
+  animation-delay: 0.3s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
 }
 
-@keyframes popout-add {
+@keyframes popout-remove {
   from {
-    transform: scale(0) translate(-50%);
+    visibility: visible;
+    transform: scale(0) translateY(-50%);
   }
   80% {
-    transform: scale(1.2) translate(-50%);
+    visibility: visible;
+    transform: scale(1.2) translateY(-50%);
   }
   to {
-    transform: scale(1) translate(-50%);
+    visibility: visible;
+    transform: scale(1) translateY(-50%);
   }
-}
-.popout-add {
-  animation: popout-add 0.4s ease;
 }
 
-@keyframes popout-add {
-  from {
-    transform: scale(0) translate(-50%);
-  }
-  80% {
-    transform: scale(1.2) translate(-50%);
-  }
-  to {
-    transform: scale(1) translate(-50%);
-  }
-}
-.popout-add {
-  animation: popout-add 0.4s ease;
+.popout-exit {
+  animation: popout-exit 0.5s ease;
+  animation-delay: 0.6s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
 }
 
-@keyframes popout-add {
+@keyframes popout-exit {
   from {
+    visibility: visible;
     transform: scale(0) translate(-50%);
   }
   80% {
+    visibility: visible;
     transform: scale(1.2) translate(-50%);
   }
   to {
+    visibility: visible;
     transform: scale(1) translate(-50%);
+  }
+}
+
+.popout-edit {
+  animation: popout-edit 0.5s ease;
+  animation-delay: 0.9s;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+}
+
+@keyframes popout-edit {
+  from {
+    visibility: visible;
+    transform: scale(0) translateY(-50%);
+  }
+  80% {
+    visibility: visible;
+    transform: scale(1.2) translateY(-50%);
+  }
+  to {
+    visibility: visible;
+    transform: scale(1) translateY(-50%);
   }
 }
