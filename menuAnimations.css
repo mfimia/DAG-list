@@ -38,6 +38,7 @@
   font-weight: 700;
 }
 
+/* Below classes define the menu items positions */
 .add-option {
   left: 50%;
   transform: translate(-50%);
@@ -57,6 +58,8 @@
   bottom: 0;
 }
 
+/* Popout class added to every menu item. Keyframes set on 0, 80% and 100% */
+/* Animations displayed on sequence */
 .popout-add {
   animation: popout-add 0.5s ease;
   visibility: hidden;
