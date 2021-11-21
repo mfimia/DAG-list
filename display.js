@@ -14,7 +14,7 @@ const display = (loaded = false) => {
 const displayMenu = (item, id) => {
   const dagItem = LIST.filter((element) => element.id == id);
   if (!dagItem[0].menu) {
-    let optionSize = item.clientWidth > 100 ? 80 : 60;
+    let optionSize = item.clientWidth > 100 ? 100 : 80;
     const menu = document.createElement("div");
     addOptionsMenu(menu);
     item.clientWidth > 100
