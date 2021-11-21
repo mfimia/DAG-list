@@ -75,7 +75,7 @@ html {
 span {
   padding: 10px;
   border: medium solid;
-  margin: 30px 12%;
+  margin: 40px 12%;
   visibility: hidden;
   display: inline-flex;
   justify-content: center;
@@ -141,20 +141,32 @@ svg {
 .options-menu-large .add-option {
   height: 50px;
   width: 50px;
+  font-size: x-large;
+  padding: 8px;
 }
 
 .add-option,
 .remove-option,
 .edit-option,
 .close-option {
-  border: 1px solid white;
+  /* border: 1px solid white; */
   height: 36px;
   width: 36px;
   border-radius: 50%;
   position: absolute;
   cursor: pointer;
   z-index: 3;
-  /* background-color: white; */
+  text-align: center;
+  font-size: large;
+  padding: 6px;
+  font-weight: 100;
+}
+
+.add-option:hover,
+.remove-option:hover,
+.edit-option:hover,
+.close-option:hover {
+  font-weight: 700;
 }
 
 .add-option {
