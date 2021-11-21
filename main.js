@@ -20,7 +20,7 @@ const create = (input) => {
   };
   LIST.unshift(item);
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
-  display();
+  display(false, true);
 };
 
 // Button functions

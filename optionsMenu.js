@@ -14,7 +14,7 @@ const addOptionsMenu = (item) => {
   });
   const editOption = document.createElement("div");
   editOption.setAttribute("class", "edit-option");
-  editOption.innerHTML = "&#9997;";
+  editOption.innerHTML = "✍";
   editOption.addEventListener("click", () => {
     editItemFromMenu();
   });
