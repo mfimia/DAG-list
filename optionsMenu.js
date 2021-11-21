@@ -2,11 +2,13 @@
 const addOptionsMenu = (item) => {
   const addOption = document.createElement("div");
   addOption.setAttribute("class", "add-option");
+  addOption.innerHTML = "➕";
   addOption.addEventListener("click", () => {
     addItemFromMenu();
   });
   const removeOption = document.createElement("div");
   removeOption.setAttribute("class", "remove-option");
+  removeOption.innerHTML = "❌";
   removeOption.addEventListener("click", () => {
     removeItemFromMenu();
   });
@@ -18,6 +20,7 @@ const addOptionsMenu = (item) => {
   });
   const closeOption = document.createElement("div");
   closeOption.setAttribute("class", "close-option");
+  closeOption.innerHTML = "🙋‍♂️";
   closeOption.addEventListener("click", () => {
     closeItemFromMenu();
   });
