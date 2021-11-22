@@ -1,7 +1,6 @@
 // Add event listeners
 FORM.addEventListener("submit", (e) => {
   evaluateCount();
-  console.log(LIST_COUNTER);
   if (!FULL_LIST) {
     e.preventDefault();
     if (INPUT.value.length < 56) {
@@ -41,10 +40,7 @@ const deleteAll = () => {
   LIST_COUNTER = 0;
   localStorage.setItem("DAG-counter", JSON.stringify(LIST_COUNTER));
   evaluateCount();
-  document.getElementById("section-1").innerHTML = "";
-  document.getElementById("section-2").innerHTML = "";
-  document.getElementById("section-3").innerHTML = "";
-  document.getElementById("section-4").innerHTML = "";
+  clearDisplay();
   display();
   console.clear();
 };

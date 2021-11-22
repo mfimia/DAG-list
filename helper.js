@@ -67,3 +67,22 @@ const attachMenu = (item) => {
 const evaluateCount = () => {
   FULL_LIST = LIST_COUNTER <= 3 ? false : true;
 };
+
+// Update the filled slot
+const updateSlots = () => {
+  for (slot = 1; slot <= LIST_COUNTER; slot++) {
+    document.getElementById(`counter-${i}`).innerHTML = "🔒";
+  }
+};
+
+// Clears the whole screen
+const clearDisplay = () => {
+  document.getElementById("section-1").innerHTML = "";
+  document.getElementById("section-2").innerHTML = "";
+  document.getElementById("section-3").innerHTML = "";
+  document.getElementById("section-4").innerHTML = "";
+  document.getElementById("counter-1").innerHTML = "";
+  document.getElementById("counter-2").innerHTML = "";
+  document.getElementById("counter-3").innerHTML = "";
+  document.getElementById("counter-4").innerHTML = "";
+};
