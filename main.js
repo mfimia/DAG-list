@@ -1,10 +1,16 @@
 // Add event listeners
 FORM.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (INPUT.value.length < 56) {
-    INPUT.value ? create(INPUT.value) : alert("Please write something!");
+  evaluateCount();
+  console.log(LIST_COUNTER);
+  if (!FULL_LIST) {
+    e.preventDefault();
+    if (INPUT.value.length < 56) {
+      INPUT.value ? create(INPUT.value) : alert("Please write something!");
+    } else {
+      alert("Please write something shorter! (Max. 55 characters)");
+    }
   } else {
-    alert("Please write something shorter! (Max. 55 characters)");
+    alert("List is full! Please remove an existing item");
   }
 });
 
@@ -22,8 +28,8 @@ const create = (input) => {
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
   LIST_COUNTER++;
   localStorage.setItem("DAG-counter", JSON.stringify(LIST_COUNTER));
-  evaluateCount();
   display(false, true);
+  evaluateCount();
 };
 
 // Button functions

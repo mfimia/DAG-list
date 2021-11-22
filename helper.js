@@ -61,5 +61,5 @@ const attachMenu = (item) => {
 
 // Evaluates if list has been filled
 const evaluateCount = () => {
-  FULL_LIST = LIST_COUNTER <= 4 ? false : true;
+  FULL_LIST = LIST_COUNTER <= 3 ? false : true;
 };
