@@ -58,3 +58,8 @@ const attachMenu = (item) => {
   menu.style.height = `${item.clientHeight + optionSize}px`;
   item.appendChild(menu);
 };
+
+// Evaluates if list has been filled
+const evaluateCount = () => {
+  FULL_LIST = LIST_COUNTER <= 4 ? false : true;
+};

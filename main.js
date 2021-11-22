@@ -18,8 +18,11 @@ const create = (input) => {
     color: randomLight(),
     menu: false,
   };
-  LIST.unshift(item);
+  LIST.push(item);
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
+  LIST_COUNTER++;
+  localStorage.setItem("DAG-counter", JSON.stringify(LIST_COUNTER));
+  evaluateCount();
   display(false, true);
 };
 
@@ -29,6 +32,13 @@ const deleteAll = () => {
   LIST = [];
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
   INPUT.value = "";
+  LIST_COUNTER = 0;
+  localStorage.setItem("DAG-counter", JSON.stringify(LIST_COUNTER));
+  evaluateCount();
+  document.getElementById("section-1").innerHTML = "";
+  document.getElementById("section-2").innerHTML = "";
+  document.getElementById("section-3").innerHTML = "";
+  document.getElementById("section-4").innerHTML = "";
   display();
   console.clear();
 };
