@@ -46,7 +46,7 @@
   border: medium dashed red;
   cursor: pointer;
   position: absolute;
-  left: 3.4%;
+  left: 3.5%;
   top: 13%;
 }
 
@@ -85,6 +85,44 @@ div[id*="section-"] {
   left: 0;
 }
 #section-4 {
+  bottom: 0;
+  right: 0;
+}
+
+#counter {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: 44%;
+  left: 7.5%;
+}
+
+div[id*="counter-"] {
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#counter-1 {
+  top: 0;
+  left: 0;
+  border-right: dotted thin white;
+  border-bottom: dotted thin white;
+}
+#counter-2 {
+  top: 0;
+  right: 0;
+  border-bottom: dotted thin white;
+}
+#counter-3 {
+  bottom: 0;
+  left: 0;
+  border-right: dotted thin white;
+}
+#counter-4 {
   bottom: 0;
   right: 0;
 }
