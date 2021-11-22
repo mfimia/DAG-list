@@ -8,7 +8,7 @@ const randomLight = () => {
   return color;
 };
 
-// Function to set all atrributes
+// Function to set all attributes
 const setAttributes = (container, id, index, color, static) => {
   // Logic to add padding/animation when item is first/not small
   if (index === LIST.length - 1 && !static && container.innerHTML.length > 5) {
@@ -54,25 +54,13 @@ const resetMenuTogglers = () => {
 const attachMenu = (item) => {
   let optionSize = item.clientWidth > 100 ? 100 : 80;
   const menu = document.createElement("div");
-  addOptionsMenu(menu);
+  addOptionsMenu(menu, item.id);
   item.clientWidth > 100
     ? menu.setAttribute("class", "options-menu-large")
     : menu.setAttribute("class", "options-menu");
   menu.style.width = `${item.clientWidth + optionSize}px`;
   menu.style.height = `${item.clientHeight + optionSize}px`;
   item.appendChild(menu);
-};
-
-// Evaluates if list has been filled
-const evaluateCount = () => {
-  FULL_LIST = LIST_COUNTER <= 3 ? false : true;
-};
-
-// Update the filled slot
-const updateSlots = () => {
-  for (slot = 1; slot <= LIST_COUNTER; slot++) {
-    document.getElementById(`counter-${i}`).innerHTML = "🔒";
-  }
 };
 
 // Clears the whole screen
@@ -85,4 +73,22 @@ const clearDisplay = () => {
   document.getElementById("counter-2").innerHTML = "";
   document.getElementById("counter-3").innerHTML = "";
   document.getElementById("counter-4").innerHTML = "";
+};
+
+// Sets all spots in lists array to "free"
+const emptyAllSpots = () => {
+  LISTS_ARRAY.forEach((item) => {
+    item.filled = false;
+  });
+  localStorage.setItem("DAG-lists-slots", JSON.stringify(LISTS_ARRAY));
+};
+
+// Takes an item and updates the position in the array
+const updateFreeSpots = (item) => {
+  LISTS_ARRAY.forEach((element) => {
+    if (element.position === item.position) {
+      element.filled = true;
+    }
+  });
+  localStorage.setItem("DAG-lists-slots", JSON.stringify(LISTS_ARRAY));
 };

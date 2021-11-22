@@ -1,12 +1,24 @@
-const addItemFromMenu = () => {
-  console.log("hi");
+const addItemFromMenu = (id) => {
+  console.log(id);
 };
-const removeItemFromMenu = () => {
-  console.log("hi");
+const removeItemFromMenu = (id) => {
+  LIST.forEach((element, index) => {
+    if (element.id == id) {
+      LISTS_ARRAY.forEach((list) => {
+        if (list.position === element.position) {
+          list.filled = false;
+        }
+      });
+      LIST.splice(index, 1);
+    }
+  });
+  localStorage.setItem("DAG-lists-slots", JSON.stringify(LISTS_ARRAY));
+  localStorage.setItem("DAG-list", JSON.stringify(LIST));
+  display(true, true);
 };
-const editItemFromMenu = () => {
-  console.log("hi");
+const editItemFromMenu = (id) => {
+  console.log(id);
 };
-const closeItemFromMenu = () => {
-  console.log("hi");
+const closeItemFromMenu = (id) => {
+  console.log(id);
 };

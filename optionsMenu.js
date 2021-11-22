@@ -1,28 +1,28 @@
 // Creates all menu options and returns item
-const addOptionsMenu = (item) => {
+const addOptionsMenu = (item, id) => {
   const addOption = document.createElement("div");
   addOption.setAttribute("class", "add-option popout-add");
   addOption.innerHTML = "➕";
   addOption.addEventListener("click", () => {
-    addItemFromMenu();
+    addItemFromMenu(id);
   });
   const removeOption = document.createElement("div");
   removeOption.setAttribute("class", "remove-option popout-remove");
   removeOption.innerHTML = "❌";
   removeOption.addEventListener("click", () => {
-    removeItemFromMenu();
+    removeItemFromMenu(id);
   });
   const editOption = document.createElement("div");
   editOption.setAttribute("class", "edit-option popout-edit");
   editOption.innerHTML = "✍";
   editOption.addEventListener("click", () => {
-    editItemFromMenu();
+    editItemFromMenu(id);
   });
   const closeOption = document.createElement("div");
   closeOption.setAttribute("class", "close-option popout-exit");
   closeOption.innerHTML = "🙋‍♂️";
   closeOption.addEventListener("click", () => {
-    closeItemFromMenu();
+    closeItemFromMenu(id);
   });
   item.appendChild(addOption);
   item.appendChild(removeOption);
