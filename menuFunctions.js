@@ -1,12 +1,12 @@
-const addItemFromMenu = () => {
-  console.log("hi");
+const addItemFromMenu = (id) => {
+  console.log(id);
 };
-const removeItemFromMenu = () => {
-  console.log("hi");
+const removeItemFromMenu = (id) => {
+  console.log(id);
 };
-const editItemFromMenu = () => {
-  console.log("hi");
+const editItemFromMenu = (id) => {
+  console.log(id);
 };
-const closeItemFromMenu = () => {
-  console.log("hi");
+const closeItemFromMenu = (id) => {
+  console.log(id);
 };
