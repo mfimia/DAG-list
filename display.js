@@ -1,7 +1,6 @@
 // Function to display items on container
 const display = (static = false, menuCleared = false) => {
   if (LIST_COUNTER <= 4) {
-    console.log("display logic triggered");
     if (menuCleared) resetMenuTogglers();
     for (i = 1; i <= LIST_COUNTER; i++) {
       const box = document.querySelector(`#display #section-${i}`);
