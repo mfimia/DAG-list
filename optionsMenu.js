@@ -22,7 +22,7 @@ const addOptionsMenu = (item, id) => {
   closeOption.setAttribute("class", "close-option popout-exit");
   closeOption.innerHTML = "🙋‍♂️";
   closeOption.addEventListener("click", () => {
-    closeItemFromMenu(id);
+    closeItemFromMenu();
   });
   item.appendChild(addOption);
   item.appendChild(removeOption);

@@ -19,6 +19,6 @@ const removeItemFromMenu = (id) => {
 const editItemFromMenu = (id) => {
   console.log(id);
 };
-const closeItemFromMenu = (id) => {
-  console.log(id);
+const closeItemFromMenu = () => {
+  display(true, true);
 };
