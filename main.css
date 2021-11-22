@@ -67,7 +67,7 @@ div[id*="section-"] {
   border: thick dashed white;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: center;
   overflow-y: auto;
 }
