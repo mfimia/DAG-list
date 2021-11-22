@@ -1,5 +1,6 @@
 // Function to display items on container
 const display = (static = false, menuCleared = false) => {
+  clearDisplay();
   if (menuCleared) resetMenuTogglers();
   LIST.forEach((item, index) => {
     const box = document.querySelector(`#display #section-${item.position}`);

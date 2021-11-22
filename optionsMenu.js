@@ -1,6 +1,5 @@
 // Creates all menu options and returns item
 const addOptionsMenu = (item, id) => {
-  console.log(item);
   const addOption = document.createElement("div");
   addOption.setAttribute("class", "add-option popout-add");
   addOption.innerHTML = "➕";

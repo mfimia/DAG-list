@@ -52,7 +52,6 @@ const resetMenuTogglers = () => {
 
 // Attaches a menu when called
 const attachMenu = (item) => {
-  console.log(item);
   let optionSize = item.clientWidth > 100 ? 100 : 80;
   const menu = document.createElement("div");
   addOptionsMenu(menu, item.id);
