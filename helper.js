@@ -11,9 +11,13 @@ const randomLight = () => {
 // Function to set all atrributes
 const setAttributes = (container, id, index, color, static) => {
   // Logic to add padding/animation when item is first/not small
-  if (index === 0 && !static && container.innerHTML.length > 5) {
+  if (index === LIST.length - 1 && !static && container.innerHTML.length > 5) {
     container.setAttribute("class", "fade-in-left padding");
-  } else if (index === 0 && !static && container.innerHTML.length <= 5) {
+  } else if (
+    index === LIST.length - 1 &&
+    !static &&
+    container.innerHTML.length <= 5
+  ) {
     container.setAttribute("class", "fade-in-left");
   } else if (container.innerHTML.length > 5) {
     container.setAttribute("class", "padding");
@@ -57,4 +61,28 @@ const attachMenu = (item) => {
   menu.style.width = `${item.clientWidth + optionSize}px`;
   menu.style.height = `${item.clientHeight + optionSize}px`;
   item.appendChild(menu);
+};
+
+// Evaluates if list has been filled
+const evaluateCount = () => {
+  FULL_LIST = LIST_COUNTER <= 3 ? false : true;
+};
+
+// Update the filled slot
+const updateSlots = () => {
+  for (slot = 1; slot <= LIST_COUNTER; slot++) {
+    document.getElementById(`counter-${i}`).innerHTML = "🔒";
+  }
+};
+
+// Clears the whole screen
+const clearDisplay = () => {
+  document.getElementById("section-1").innerHTML = "";
+  document.getElementById("section-2").innerHTML = "";
+  document.getElementById("section-3").innerHTML = "";
+  document.getElementById("section-4").innerHTML = "";
+  document.getElementById("counter-1").innerHTML = "";
+  document.getElementById("counter-2").innerHTML = "";
+  document.getElementById("counter-3").innerHTML = "";
+  document.getElementById("counter-4").innerHTML = "";
 };
