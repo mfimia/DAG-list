@@ -2,7 +2,7 @@
 const display = (static = false, menuCleared = false) => {
   if (menuCleared) resetMenuTogglers();
   const box = document.getElementById("display");
-  box.innerHTML = "";
+  // box.innerHTML = "";
   LIST.forEach((item, i) => {
     const span = document.createElement("span");
     span.setAttribute("id", item.id);
