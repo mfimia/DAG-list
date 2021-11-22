@@ -1,15 +1,14 @@
 // Add event listeners
 FORM.addEventListener("submit", (e) => {
-  evaluateCount();
-  if (!FULL_LIST) {
-    e.preventDefault();
+  e.preventDefault();
+  if (LISTS_ARRAY.every((item) => item.filled)) {
+    alert("All lists are taken! Please remove an existing item");
+  } else {
     if (INPUT.value.length < 56) {
       INPUT.value ? create(INPUT.value) : alert("Please write something!");
     } else {
       alert("Please write something shorter! (Max. 55 characters)");
     }
-  } else {
-    alert("List is full! Please remove an existing item");
   }
 });
 
@@ -17,18 +16,18 @@ FORM.addEventListener("submit", (e) => {
 // Function to create and store items
 const create = (input) => {
   INPUT.value = "";
+  const availableSpot = LISTS_ARRAY.find((item) => !item.filled);
   const item = {
     text: input,
     id: Math.floor(Math.random() * 100000),
     color: randomLight(),
     menu: false,
+    position: availableSpot.position,
   };
+  updateFreeSpots(item);
   LIST.push(item);
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
-  LIST_COUNTER++;
-  localStorage.setItem("DAG-counter", JSON.stringify(LIST_COUNTER));
   display(false, true);
-  evaluateCount();
 };
 
 // Button functions
@@ -37,10 +36,8 @@ const deleteAll = () => {
   LIST = [];
   localStorage.setItem("DAG-list", JSON.stringify(LIST));
   INPUT.value = "";
-  LIST_COUNTER = 0;
-  localStorage.setItem("DAG-counter", JSON.stringify(LIST_COUNTER));
-  evaluateCount();
   clearDisplay();
-  display();
+  emptyAllSpots();
   console.clear();
+  display();
 };
