@@ -12,8 +12,8 @@ const removeItemFromMenu = (id) => {
       LIST.splice(index, 1);
     }
   });
-  localStorage.setItem("DAG-lists-slots", JSON.stringify(LISTS_ARRAY));
-  localStorage.setItem("DAG-list", JSON.stringify(LIST));
+  sessionStorage.setItem("DAG-lists-slots", JSON.stringify(LISTS_ARRAY));
+  sessionStorage.setItem("DAG-list", JSON.stringify(LIST));
   display(true, true);
 };
 const editItemFromMenu = (id) => {

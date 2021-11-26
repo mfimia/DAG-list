@@ -39,7 +39,7 @@ const displayedMenuActive = (id) => {
       item.menu = true;
     }
   });
-  localStorage.setItem("DAG-list", JSON.stringify(LIST));
+  sessionStorage.setItem("DAG-list", JSON.stringify(LIST));
 };
 
 // Resetting menu display toggler on load
@@ -47,7 +47,7 @@ const resetMenuTogglers = () => {
   LIST.forEach((element) => {
     element.menu = false;
   });
-  localStorage.setItem("DAG-list", JSON.stringify(LIST));
+  sessionStorage.setItem("DAG-list", JSON.stringify(LIST));
 };
 
 // Attaches a menu when called
@@ -80,7 +80,7 @@ const emptyAllSpots = () => {
   LISTS_ARRAY.forEach((item) => {
     item.filled = false;
   });
-  localStorage.setItem("DAG-lists-slots", JSON.stringify(LISTS_ARRAY));
+  sessionStorage.setItem("DAG-lists-slots", JSON.stringify(LISTS_ARRAY));
 };
 
 // Takes an item and updates the position in the array
@@ -90,5 +90,5 @@ const updateFreeSpots = (item) => {
       element.filled = true;
     }
   });
-  localStorage.setItem("DAG-lists-slots", JSON.stringify(LISTS_ARRAY));
+  sessionStorage.setItem("DAG-lists-slots", JSON.stringify(LISTS_ARRAY));
 };

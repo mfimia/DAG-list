@@ -1,9 +1,9 @@
 const FORM = document.getElementById("form");
 const INPUT = document.getElementById("input");
 // Data containing elements in the list (up to 4)
-let LIST = JSON.parse(localStorage.getItem("DAG-list")) || [];
+let LIST = JSON.parse(sessionStorage.getItem("DAG-list")) || [];
 // List of lists. Includes its counter, its position and information about status
-const LISTS_ARRAY = JSON.parse(localStorage.getItem("DAG-lists-slots")) || [
+const LISTS_ARRAY = JSON.parse(sessionStorage.getItem("DAG-lists-slots")) || [
   {
     filled: false,
     position: 1,

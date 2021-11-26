@@ -26,7 +26,7 @@ const create = (input) => {
   };
   updateFreeSpots(item);
   LIST.push(item);
-  localStorage.setItem("DAG-list", JSON.stringify(LIST));
+  sessionStorage.setItem("DAG-list", JSON.stringify(LIST));
   display(false, true);
 };
 
@@ -34,7 +34,7 @@ const create = (input) => {
 // Delete all items from local storage, local array and clear console
 const deleteAll = () => {
   LIST = [];
-  localStorage.setItem("DAG-list", JSON.stringify(LIST));
+  sessionStorage.setItem("DAG-list", JSON.stringify(LIST));
   INPUT.value = "";
   clearDisplay();
   emptyAllSpots();
